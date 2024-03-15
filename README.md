@@ -1,4 +1,4 @@
-# cli-rs
+# cmd-exec-rs
 
 Basic Rust library to execute shell commands locally or remotely using ssh.
 

@@ -45,6 +45,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "cmd_exec"
+version = "0.1.0"
+dependencies = [
+ "predicates",
+ "ssh2",
+ "thiserror",
+]
+
+[[package]]
 name = "difflib"
 version = "0.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -121,15 +130,6 @@ name = "normalize-line-endings"
 version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "61807f77802ff30975e01f4f071c8ba10c022052f98b3294119f3e615d13e5be"
-
-[[package]]
-name = "nsp_cli"
-version = "0.1.0"
-dependencies = [
- "predicates",
- "ssh2",
- "thiserror",
-]
 
 [[package]]
 name = "num-traits"
