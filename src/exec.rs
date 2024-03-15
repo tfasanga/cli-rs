@@ -96,7 +96,7 @@ fn build_scp_arg<'a>(machine: &Machine, file: &'a str, exec_machine: &Machine) -
         Machine::RemoteMachine(creds) => {
             let user = &creds.username;
             let ip = &creds.hostname;
-            Cow::Owned(format!("{user}@{ip}/{file}"))
+            Cow::Owned(format!("{user}@{ip}:{file}"))
         }
     }
 }

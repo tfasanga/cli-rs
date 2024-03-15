@@ -9,6 +9,8 @@ use crate::exec::ExitCode;
 ///
 /// Will return `Err` if it was unable to execute the command.
 pub fn execute_cmd(cmd: &str, args: &[&str]) -> CmdResult<(ExitCode, String)> {
+    println!("[localhost] {} {}", cmd, args.join(" "));
+
     let output = Command::new(cmd)
         .args(args)
         .output()?;
@@ -36,6 +38,8 @@ pub fn execute_cmd(cmd: &str, args: &[&str]) -> CmdResult<(ExitCode, String)> {
 ///
 /// Will return `Err` if it was unable to execute the command.
 pub fn run_cmd(cmd: &str, args: &[&str]) -> CmdResult<ExitCode> {
+    println!("[localhost] {} {}", cmd, args.join(" "));
+
     let mut child = Command::new(cmd)
         .args(args)
         .spawn()?;

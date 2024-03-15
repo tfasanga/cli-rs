@@ -1,7 +1,7 @@
 use std::ffi::OsString;
 
 #[allow(clippy::module_name_repetitions)]
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub struct SshCredentials {
     pub username: String,
     pub hostname: String,

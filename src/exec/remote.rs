@@ -14,6 +14,9 @@ use crate::exec::ssh::SshCredentials;
 pub fn execute_cmd(creds: &SshCredentials, cmd: &str, args: &[&str]) -> CmdResult<(ExitCode, String)> {
     let host = creds.hostname.clone();
     let port = creds.port.unwrap_or(22);
+
+    println!("[{}:{}] {} {}", host, port, cmd, args.join(" "));
+
     let tcp = TcpStream::connect((host, port))?;
 
     let mut session = Session::new()?;
@@ -46,6 +49,9 @@ pub fn execute_cmd(creds: &SshCredentials, cmd: &str, args: &[&str]) -> CmdResul
 pub fn run_cmd(creds: &SshCredentials, cmd: &str, args: &[&str]) -> CmdResult<ExitCode> {
     let host = creds.hostname.clone();
     let port = creds.port.unwrap_or(22);
+
+    println!("[{}:{}] {} {}", host, port, cmd, args.join(" "));
+
     let tcp = TcpStream::connect((host, port))?;
 
     let mut session = Session::new()?;

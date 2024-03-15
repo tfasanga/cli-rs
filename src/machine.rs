@@ -1,7 +1,7 @@
 use crate::exec::{CmdResult, CommandExecutor, ExitCode, local, remote};
 use crate::exec::ssh::SshCredentials;
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum Machine {
     LocalMachine,
     RemoteMachine(SshCredentials),
